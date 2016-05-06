@@ -61,8 +61,10 @@
               
             }
             
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"downloaded" object:nil];
-            NSLog(@"notification posted");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"downloaded" object:nil];
+                NSLog(@"notification posted");
+            });
         }];
     }
 
