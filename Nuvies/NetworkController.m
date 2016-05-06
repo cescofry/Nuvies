@@ -14,7 +14,7 @@
 
 
 
--(void)getMovieWithTitle:(NSString *)movieTitle onCompletion:(nullable onComplete)completionHandler
++ (NSURLSessionTask * _Nonnull)movieWithTitle:(NSString  * _Nonnull)movieTitle onCompletion:(nullable onComplete)completionHandler
 {
     
     NSString *encodedMovieTitle = [self stringByAddingPercentEncodingForFormData:movieTitle];
@@ -23,14 +23,15 @@
     
     NSURLSession *session = [NSURLSession sharedSession];
     
-    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (data != nil) {
             NSError *err;
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
             
             if (err == nil) {
-                completionHandler(json, nil);
+                Movies *movie = [MovieParser movieFromDataDictionary:json];
+                completionHandler(movie, nil);
             } else {
                 completionHandler(nil, @"Data is Corrupt");
             }
@@ -38,11 +39,16 @@
             completionHandler(nil, @"problem connecting with the server");
         }
         
-    }] resume];
+    }];
+    [task resume];
     
+    return task;
 }
 
-- (nullable NSString *)stringByAddingPercentEncodingForFormData: (nonnull NSString *)movieTitle {
+#pragma mark - Private
+
++ (nullable NSString *)stringByAddingPercentEncodingForFormData: (nonnull NSString *)movieTitle
+{
     NSString *unreserved = @"*-._";
     NSMutableCharacterSet *allowed = [NSMutableCharacterSet alphanumericCharacterSet];
     [allowed addCharactersInString:unreserved];

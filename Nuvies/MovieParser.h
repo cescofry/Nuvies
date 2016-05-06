@@ -11,6 +11,6 @@
 @class Movies;
 @interface MovieParser : NSObject
 
-+ (Movies *)movieFromDataDictionary:(NSDictionary * _Nonnull)dataDictionary
++ (Movies *)movieFromDataDictionary:(NSDictionary * _Nonnull)dataDictionary;
 
 @end

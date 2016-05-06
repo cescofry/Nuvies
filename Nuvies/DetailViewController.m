@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "Movies.h"
+#import "NetworkController.h"
 
 @interface DetailViewController ()
 
@@ -17,11 +18,15 @@
 
 - (void)viewDidLoad {
     
-
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadDetailView) name:@"downloaded" object:nil];
-    
-    self.movie = [[Movies alloc]initWithMovieTitle:self.movieTitle];
     self.navigationController.title = self.movieTitle;
+
+    [NetworkController movieWithTitle:self.movieTitle onCompletion:^(Movies * _Nullable movie, NSString * _Nullable errorMessage) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.movie = movie;
+            [self loadDetailView];
+        });
+    }];
+    
     
 }
 
