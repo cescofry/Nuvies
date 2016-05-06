@@ -17,6 +17,8 @@
 		8B9C33FC1CDA3F96001CD9D8 /* MoviesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C33FB1CDA3F96001CD9D8 /* MoviesTableViewController.m */; };
 		8B9C33FF1CDA5994001CD9D8 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C33FE1CDA5994001CD9D8 /* DetailViewController.m */; };
 		8B9C34031CDB84B2001CD9D8 /* Movies.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C34021CDB84B2001CD9D8 /* Movies.m */; };
+		9B0F88C61CDC99FD000D759D /* MovieParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F88C51CDC99FD000D759D /* MovieParser.m */; };
+		9B0F88C91CDC9B00000D759D /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F88C81CDC9B00000D759D /* NetworkController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		8B9C33FE1CDA5994001CD9D8 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		8B9C34011CDB84B2001CD9D8 /* Movies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movies.h; sourceTree = "<group>"; };
 		8B9C34021CDB84B2001CD9D8 /* Movies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movies.m; sourceTree = "<group>"; };
+		9B0F88C41CDC99FD000D759D /* MovieParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieParser.h; sourceTree = "<group>"; };
+		9B0F88C51CDC99FD000D759D /* MovieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieParser.m; sourceTree = "<group>"; };
+		9B0F88C71CDC9B00000D759D /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
+		9B0F88C81CDC9B00000D759D /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				8B9C33D21CDA3E14001CD9D8 /* LaunchScreen.storyboard */,
 				8B9C33D51CDA3E14001CD9D8 /* Info.plist */,
 				8B9C33C41CDA3E14001CD9D8 /* Supporting Files */,
+				9B0F88C41CDC99FD000D759D /* MovieParser.h */,
+				9B0F88C51CDC99FD000D759D /* MovieParser.m */,
+				9B0F88C71CDC9B00000D759D /* NetworkController.h */,
+				9B0F88C81CDC9B00000D759D /* NetworkController.m */,
 			);
 			path = Nuvies;
 			sourceTree = "<group>";
@@ -291,6 +301,8 @@
 				8B9C33C91CDA3E14001CD9D8 /* AppDelegate.m in Sources */,
 				8B9C33FC1CDA3F96001CD9D8 /* MoviesTableViewController.m in Sources */,
 				8B9C34031CDB84B2001CD9D8 /* Movies.m in Sources */,
+				9B0F88C61CDC99FD000D759D /* MovieParser.m in Sources */,
+				9B0F88C91CDC9B00000D759D /* NetworkController.m in Sources */,
 				8B9C33C61CDA3E14001CD9D8 /* main.m in Sources */,
 				8B9C33FF1CDA5994001CD9D8 /* DetailViewController.m in Sources */,
 			);
@@ -518,6 +530,7 @@
 				8B9C33F01CDA3E14001CD9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B9C33F11CDA3E14001CD9D8 /* Build configuration list for PBXNativeTarget "NuviesTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +539,7 @@
 				8B9C33F31CDA3E14001CD9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B9C33F41CDA3E14001CD9D8 /* Build configuration list for PBXNativeTarget "NuviesUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +548,7 @@
 				8B9C33F61CDA3E14001CD9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
