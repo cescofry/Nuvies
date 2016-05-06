@@ -19,6 +19,7 @@
 		8B9C34031CDB84B2001CD9D8 /* Movies.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C34021CDB84B2001CD9D8 /* Movies.m */; };
 		9B0F88C61CDC99FD000D759D /* MovieParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F88C51CDC99FD000D759D /* MovieParser.m */; };
 		9B0F88C91CDC9B00000D759D /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F88C81CDC9B00000D759D /* NetworkController.m */; };
+		9B0F88CC1CDC9F10000D759D /* MovieFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F88CB1CDC9F10000D759D /* MovieFeedParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		9B0F88C51CDC99FD000D759D /* MovieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieParser.m; sourceTree = "<group>"; };
 		9B0F88C71CDC9B00000D759D /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		9B0F88C81CDC9B00000D759D /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
+		9B0F88CA1CDC9F10000D759D /* MovieFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFeedParser.h; sourceTree = "<group>"; };
+		9B0F88CB1CDC9F10000D759D /* MovieFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFeedParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				9B0F88C51CDC99FD000D759D /* MovieParser.m */,
 				9B0F88C71CDC9B00000D759D /* NetworkController.h */,
 				9B0F88C81CDC9B00000D759D /* NetworkController.m */,
+				9B0F88CA1CDC9F10000D759D /* MovieFeedParser.h */,
+				9B0F88CB1CDC9F10000D759D /* MovieFeedParser.m */,
 			);
 			path = Nuvies;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				8B9C34031CDB84B2001CD9D8 /* Movies.m in Sources */,
 				9B0F88C61CDC99FD000D759D /* MovieParser.m in Sources */,
 				9B0F88C91CDC9B00000D759D /* NetworkController.m in Sources */,
+				9B0F88CC1CDC9F10000D759D /* MovieFeedParser.m in Sources */,
 				8B9C33C61CDA3E14001CD9D8 /* main.m in Sources */,
 				8B9C33FF1CDA5994001CD9D8 /* DetailViewController.m in Sources */,
 			);

@@ -8,8 +8,11 @@
 
 #import "MoviesTableViewController.h"
 #import "DetailViewController.h"
+#import "NetworkController.h"
 
 @interface MoviesTableViewController ()
+
+@property (nonatomic, strong) NSArray *movieList;
 
 @end
 
@@ -18,27 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.movieList = [NSMutableArray array];
-    NSURL *rssURL = [NSURL URLWithString:@"http://www.fandango.com/rss/newmovies.rss"];
-    NSXMLParser *parser = [[NSXMLParser alloc]initWithContentsOfURL:rssURL];
-    [parser setDelegate:self];
-    [parser parse];
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
-//    [request setURL:[NSURL URLWithString:@"http://www.omdbapi.com/?t=Code+of+Honor+&y=2016&plot=full&r=json"]];
-//    
-//    NSURLSessionDataTask *task = [[self getURLSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSError *err;
-//            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
-//            
-//            NSLog(@"%@", json);
-//            
-//        });
-//    }];
-//    
-//    [task resume];
-//
-
+    self.movieList = [NetworkController movieTitlesFeed];
 }
 
 
@@ -86,43 +69,6 @@
     
     
 }
-
-
-#pragma mark - Parse RSS data
-
-
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    
-    self.element = elementName;
-    
-    if ([self.element isEqualToString:@"title"]) {
-        self.filmTitle = [NSMutableString string];
-    }
-}
-
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
-    if ([self.element isEqualToString:@"title"]) {
-        if(![self.filmTitle isEqualToString:@"New Movies"]) {
-            [self.movieList addObject:self.filmTitle];
-        }
-    }
-    
-    self.filmTitle = nil;
-    self.element = nil;
-    
-}
-
--(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    if (!self.element) return;
-    
-    if ([self.element isEqualToString:@"title"]) {
-        self.filmTitle = string;
-        
-    }
-}
-
 
 
 

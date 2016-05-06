@@ -9,6 +9,7 @@
 #import "NetworkController.h"
 #import "Movies.h"
 #import "MovieParser.h"
+#import "MovieFeedParser.h"
 
 @implementation NetworkController
 
@@ -44,6 +45,20 @@
     
     return task;
 }
+
+
++ (NSArray * _Nonnull)movieTitlesFeed
+{
+    
+    NSURL *rssURL = [NSURL URLWithString:@"http://www.fandango.com/rss/newmovies.rss"];
+    
+    MovieFeedParser *movieFeedParser = [[MovieFeedParser alloc] initWithURL:rssURL];
+    [movieFeedParser parse];
+    
+    return movieFeedParser.movieList;
+}
+
+
 
 #pragma mark - Private
 
